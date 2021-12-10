@@ -31,17 +31,40 @@ let map = L.map('mapid', {
 // Pass our map layers into our layers control and add the layers control to the map. (Class Mod 13.5.4)
 L.control.layers(baseMaps).addTo(map);
 
-// Create a style for the lines. (alternative to Skill Drill 13.5.5)
-//let myStyle = {
-  //color: "#ffffa1",
-  //weight: 2
-//}
-
 // Grabbing our GeoJSON data.
 d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson").then(function(data) {
   console.log(data);
+// This function returns the style data for each of the earthquakes we plot on the map. We pass
+  // the magnitude of the earthquake into a function to calculate the radius.
+  function styleInfo(feature) {
+    return {
+      opacity: 1,
+      fillOpacity: 1,
+      fillColor: "#ffae42",
+      color: "#000000",
+      radius: getRadius(),
+      stroke: true,
+      weight: 0.5
+    };
+}
+// This function determines the radius of the earthquake marker based on its magnitude.
+// Earthquakes with a magnitude of 0 will be plotted with a radius of 1.
+function getRadius(magnitude) {
+    if (magnitude === 0) {
+      return 1;
+    }
+    return magnitude * 4;
+  }
+
   // Creating a GeoJSON layer with the retrieved data.
-  L.geoJSON(data).addTo(map);
+  L.geoJSON(data, {
+  // We turn each feature into a circleMarker on the map.
+    pointToLayer: function(feature, latlng) {
+      console.log(data);
+      return L.circleMarker(latlng);
+      },
+    style: styleInfo
+  }).addTo(map);
 });
 //Creating a GeoJSON layer with the retrieved data (Skill Drill 13.5.5)
   //L.geoJSON(data, {
