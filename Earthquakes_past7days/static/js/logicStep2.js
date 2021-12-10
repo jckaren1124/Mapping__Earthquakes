@@ -66,14 +66,3 @@ function getRadius(magnitude) {
     style: styleInfo
   }).addTo(map);
 });
-//Creating a GeoJSON layer with the retrieved data (Skill Drill 13.5.5)
-  //L.geoJSON(data, {
-    //style: myStyle,
-    //color: "#ffffa1",
-    //weight: 2, 
-    //onEachFeature: function(feature, layer) {
-    //console.log(layer);
-    //layer.bindPopup("<h3> Airline: " + feature.properties.airline + "</h3> <hr><h3>Destination: " + feature.properties.dst + "</h3>");
-    //}
-  //}).addTo(map);
-//});
