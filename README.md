@@ -4,7 +4,7 @@
 An earthquake map was created that allows users to view different maps with earthquake overlay information. Earthquakes that occurred within the past 7 days are displayed on the map.  Earthquake data is obtained from the U.S. Geological Survey website: https://earthquake.usgs.gov/.
 
 ## Results
-If the user hovers over the Layer Control icon on the top right corner of the map, this icon will display three map options: streets, satellite, and light. Each option is a base layer map with different world map views as show below.
+If the user's mouse hovers over the Layer Control icon on the top right corner of the map, this icon will display three map options: streets, satellite, and light. Each option is a base layer map with different world map views as show below.
 
 ![street map view](https://user-images.githubusercontent.com/89353378/145731961-de66df9d-0695-4c81-9490-4cd1de8d513d.png)
 
