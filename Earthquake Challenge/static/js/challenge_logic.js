@@ -146,10 +146,7 @@ legend.onAdd = function() {
   d3.json("https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json").then(function(data) {
     function styleInfo(feature) {
       return {
-        opacity: 1,
-        fillOpacity: 1,
-        color: "#98ee00",
-        stroke: true,
+        color: "#ffffa1",
         weight: 2     
     } };
   //add tectonic layer group variable to the map
